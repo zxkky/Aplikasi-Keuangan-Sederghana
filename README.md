@@ -85,20 +85,6 @@ python app.py
 http://127.0.0.1:5000
 ```
 
----
-
-## 🖼️ Tampilan Aplikasi
-
-### Halaman Catat Transaksi
-
-![Catat Transaksi](https://github.com/zxkky/Aplikasi-Keuangan-Sederhana/assets/catat_transaksi.png)
-
-### Halaman Laporan Keuangan
-
-![Laporan Keuangan](https://github.com/zxkky/Aplikasi-Keuangan-Sederhana/assets/laporan_keuangan.png)
-
----
-
 ## 👨‍💻 Pengembang
 
 **Nama:** zxkky
