@@ -112,12 +112,3 @@ http://127.0.0.1:5000
 
 ```
 
----
-
-🎯 **Penjelasan singkat:**
-- Markdown-nya sudah diatur agar **blok kode (`bash`, `python`) tampil dengan gaya terminal rapi**.  
-- Tidak ada nested markdown yang bisa bikin struktur acak-acakan (seperti di tangkapan layar kamu tadi).  
-- Sudah kompatibel dengan tampilan **GitHub dark/light mode**.  
-
-Kamu mau saya tambahkan juga **badge GitHub (stars, commit terakhir, license, Python version)** di bagian atas README biar terlihat profesional?
-```
