@@ -25,16 +25,19 @@ Dibuat menggunakan **Python (Flask)** dan **HTML/CSS (Bootstrap)** agar mudah di
 - **Template Engine:** Jinja2  
 
 ---
-
 ## 📂 Struktur Proyek
+
+```
+
 Aplikasi-Keuangan-Sederhana/
 │
-├── instance/ # Folder database SQLite
-├── templates/ # File HTML untuk tampilan (catat transaksi & laporan)
-├── venv/ # Virtual environment (opsional)
-├── app.py # File utama Flask
-└── README.md # Dokumentasi proyek
+├── instance/               # Folder database SQLite
+├── templates/              # File HTML untuk tampilan (catat transaksi & laporan)
+├── venv/                   # Virtual environment (opsional)
+├── app.py                  # File utama Flask
+└── README.md               # Dokumentasi proyek
 
+````
 
 ---
 
@@ -44,14 +47,77 @@ Aplikasi-Keuangan-Sederhana/
 ```bash
 git clone https://github.com/zxkky/Aplikasi-Keuangan-Sederhana.git
 cd Aplikasi-Keuangan-Sederhana
-2️⃣ Aktifkan Virtual Environment (opsional)
-python -m venv venv
-source venv/Scripts/activate  # Windows
-source venv/bin/activate      # Linux/Mac
-3️⃣ Install Dependencies
-python app.py
-4️⃣ Jalankan Aplikasi
-python app.py
-5️⃣ Buka di Browser
-http://127.0.0.1:5000
+````
 
+### 2️⃣ Aktifkan Virtual Environment (opsional)
+
+```bash
+python -m venv venv
+```
+
+**Windows:**
+
+```bash
+venv\Scripts\activate
+```
+
+**Linux / MacOS:**
+
+```bash
+source venv/bin/activate
+```
+
+### 3️⃣ Install Dependencies
+
+```bash
+pip install flask
+```
+
+### 4️⃣ Jalankan Aplikasi
+
+```bash
+python app.py
+```
+
+### 5️⃣ Buka di Browser
+
+```
+http://127.0.0.1:5000
+```
+
+---
+
+## 🖼️ Tampilan Aplikasi
+
+### Halaman Catat Transaksi
+
+![Catat Transaksi](https://github.com/zxkky/Aplikasi-Keuangan-Sederhana/assets/catat_transaksi.png)
+
+### Halaman Laporan Keuangan
+
+![Laporan Keuangan](https://github.com/zxkky/Aplikasi-Keuangan-Sederhana/assets/laporan_keuangan.png)
+
+---
+
+## 👨‍💻 Pengembang
+
+**Nama:** zxkky
+**Proyek:** Aplikasi Keuangan Sederhana
+**Versi:** 1.0.0
+**Lisensi:** MIT License
+
+---
+
+> 📘 *Proyek ini dibuat untuk latihan dan pembelajaran dasar Flask serta manajemen keuangan pribadi.*
+
+```
+
+---
+
+🎯 **Penjelasan singkat:**
+- Markdown-nya sudah diatur agar **blok kode (`bash`, `python`) tampil dengan gaya terminal rapi**.  
+- Tidak ada nested markdown yang bisa bikin struktur acak-acakan (seperti di tangkapan layar kamu tadi).  
+- Sudah kompatibel dengan tampilan **GitHub dark/light mode**.  
+
+Kamu mau saya tambahkan juga **badge GitHub (stars, commit terakhir, license, Python version)** di bagian atas README biar terlihat profesional?
+```
