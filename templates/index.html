@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Keuangan Anak Kos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+    <h1 class="text-2xl font-bold mb-4">Catat Transaksi</h1>
+
+    <form action="/" method="POST" class="mb-6 p-4 bg-white rounded shadow">
+        <label class="block mb-2">Tanggal:</label>
+        <input type="date" name="tanggal" required class="border p-2 rounded w-full mb-4">
+
+        <label class="block mb-2">Kategori:</label>
+        <input type="text" name="kategori" required class="border p-2 rounded w-full mb-4">
+
+       <label class="block mb-2">Jenis Transaksi:</label>
+<select id="jenis" class="border p-2 rounded w-full mb-4" required>
+    <option value="positif">Pemasukan</option>
+    <option value="negatif">Pengeluaran</option>
+</select>
+
+<label class="block mb-2">Jumlah:</label>
+<select id="jumlahSelect" name="jumlah" required class="border p-2 rounded w-full mb-4">
+    <!-- opsi akan diisi otomatis lewat JavaScript -->
+</select>
+        <label class="block mb-2">Catatan:</label>
+        <textarea name="catatan" class="border p-2 rounded w-full mb-4"></textarea>
+
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Simpan</button>
+        <a href="/laporan" class="bg-green-500 text-white px-4 py-2 rounded">
+                Lihat Laporan
+            </a>
+    </form>
+
+<script>
+function generateOptions(jenis) {
+    const jumlahSelect = document.getElementById('jumlahSelect');
+    jumlahSelect.innerHTML = ""; // hapus semua opsi lama
+    let step = 10000; // kelipatan 10 ribu
+    let max = 5000000; // batas 5 juta
+
+    for (let i = 10000; i <= max; i += step) {
+        let value = (jenis === "negatif") ? -i : i;
+        let option = document.createElement("option");
+        option.value = value;
+        option.textContent = (jenis === "negatif" ? "-Rp " : "Rp ") + Math.abs(value).toLocaleString('id-ID');
+        jumlahSelect.appendChild(option);
+    }
+}
+
+// generate default pemasukan saat halaman pertama kali load
+generateOptions("positif");
+
+// ganti list angka sesuai pilihan
+document.getElementById('jenis').addEventListener('change', function() {
+    generateOptions(this.value);
+});
+</script>
+</body>
+</html>

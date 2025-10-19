@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Keuangan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+    <h1 class="text-2xl font-bold mb-4">Laporan Keuangan</h1>
+
+    <div class="grid grid-cols-3 gap-4 mb-6">
+        <div class="bg-green-100 p-4 rounded">
+            <p class="font-bold">Total Pemasukan</p>
+            <p class="text-green-700 text-xl">{{ pemasukan | rupiah }}</p>
+        </div>
+        <div class="bg-red-100 p-4 rounded">
+            <p class="font-bold">Total Pengeluaran</p>
+            <p class="text-red-700 text-xl">{{ pengeluaran | rupiah }}</p>
+        </div>
+        <div class="bg-blue-100 p-4 rounded">
+            <p class="font-bold">Saldo</p>
+            <p class="text-blue-700 text-xl">{{ saldo | rupiah }}</p>
+        </div>
+    </div>
+
+    <h2 class="text-xl font-semibold mb-2">Daftar Transaksi</h2>
+    <table class="w-full bg-white rounded shadow-md">
+        <thead class="bg-gray-200">
+            <tr>
+                <th class="p-2">Tanggal</th>
+                <th class="p-2">Kategori</th>
+                <th class="p-2">Jumlah</th>
+                <th class="p-2">Catatan</th>
+                <th class="p-2">Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for t in transaksi_list %}
+            <tr class="border-b">
+                <td class="p-2">{{ t.tanggal.strftime('%d-%m-%Y') }}</td>
+                <td class="p-2">{{ t.kategori }}</td>
+                <td class="p-2 {% if t.jumlah < 0 %}text-red-500{% else %}text-green-500{% endif %}">{{ t.jumlah | rupiah }}</td>
+                <td class="p-2">{{ t.catatan }}</td>
+                <td class="p-2 flex gap-2">
+                    <!-- Tombol Edit -->
+                    <a href="/edit/{{ t.id }}" class="bg-yellow-500 text-white px-3 py-1 rounded text-sm">Edit</a>
+                    <!-- Tombol Hapus -->
+                    <a href="/delete/{{ t.id }}" onclick="return confirm('Yakin mau hapus data ini?')" class="bg-red-500 text-white px-3 py-1 rounded text-sm">Hapus</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>    
+    </table>
+    
+    <!-- Tombol Cetak PDF -->
+   {% if transaksi_list %}
+<a href="/laporan/pdf" class="inline-block mt-4 bg-purple-500 text-white px-4 py-2 rounded">Cetak PDF</a>
+{% endif %}
+    <!-- Tombol Kembali -->
+    <a href="/" class="inline-block mt-4 bg-blue-500 text-white px-4 py-2 rounded">Kembali</a>
+</body>
+</html>
