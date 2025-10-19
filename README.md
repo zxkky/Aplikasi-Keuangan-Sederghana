@@ -92,9 +92,6 @@ http://127.0.0.1:5000
 **Versi:** 1.0.0
 **Lisensi:** MIT License
 
----
 
 > 📘 *Proyek ini dibuat untuk latihan dan pembelajaran dasar Flask serta manajemen keuangan pribadi.*
-
-```
 
